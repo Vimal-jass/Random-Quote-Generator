@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Generator</title>
+  <style>
+    /* ---------- Base Styles ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: white;
+      color: #212121;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* ---------- Dark Mode ---------- */
+    .dark {
+      background: #212121;
+      color: white;
+    }
+
+    /* ---------- Container ---------- */
+    .random {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .dark .random {
+      background: rgba(33, 33, 33, 0.9);
+    }
+
+    /* ---------- Heading ---------- */
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+    }
+
+    /* ---------- Quote Text ---------- */
+    #quote {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    /* ---------- Author ---------- */
+    #author {
+      font-size: 1rem;
+      font-style: italic;
+      margin-bottom: 20px;
+      opacity: 0.7;
+    }
+
+    /* ---------- Buttons ---------- */
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      background: #007bff;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+
+    /* Dark mode button style */
+    #dark {
+      background: #444;
+    }
+
+    #dark:hover {
+      background: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="random">
+    <h1>Random Quote Generator</h1>
+    <p id="quote">Click "New Quote" to start</p>
+    <p id="author">-</p>
+    <button id="btn">New Quote</button>
+    <button id="dark">Light/Dark Mode</button>
+  </div>
+
+  <script>
+    const quote = document.getElementById("quote");
+    const author = document.getElementById("author");
+    const btn = document.getElementById("btn");
+    const theme = document.getElementById("dark");
+    const body = document.body;
+
+    const quotes = [
+      { text: "Dream big, work hard.", author: "Unknown" },
+      { text: "Stay hungry, stay foolish.", author: "Steve Jobs" },
+      { text: "Code is like humor. When you have to explain it, it’s bad.", author: "Cory House" },
+      { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
+      { text: "Experience is the name everyone gives to their mistakes.", author: "Oscar Wilde" },
+      { text: "Make it work, make it right, make it fast.", author: "Kent Beck" },
+      { text: "Talk is cheap. Show me the code.", author: "Linus Torvalds" },
+      { text: "Simplicity is the soul of efficiency.", author: "Austin Freeman" },
+      { text: "Code never lies, comments sometimes do.", author: "Ron Jeffries" },
+      { text: "Programs must be written for people to read, and only incidentally for machines to execute.", author: "Harold Abelson" },
+      { text: "Don’t comment bad code—rewrite it.", author: "Brian Kernighan" },
+      { text: "In order to be irreplaceable, one must always be different.", author: "Coco Chanel" },
+      { text: "Opportunities don't happen, you create them.", author: "Chris Grosser" },
+      { text: "Do one thing every day that scares you.", author: "Eleanor Roosevelt" },
+      { text: "Fall seven times and stand up eight.", author: "Japanese Proverb" },
+      { text: "Push yourself, because no one else is going to do it for you.", author: "Unknown" },
+      { text: "If you are not willing to risk the usual, you will have to settle for the ordinary.", author: "Jim Rohn" },
+      { text: "Great things never come from comfort zones.", author: "Unknown" },
+      { text: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+      { text: "Hustle until your haters ask if you’re hiring.", author: "Unknown" }
+    ];
+
+    // Light/Dark mode toggle
+    theme.addEventListener("click", () => {
+      body.classList.toggle("dark");
+    });
+
+    // Random quote function
+    function randomQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const selectQuotes = quotes[randomIndex];
+      quote.textContent = selectQuotes.text;
+      author.textContent = `— ${selectQuotes.author}`;
+    }
+
+    // Button click with setInterval
+   
+    btn.addEventListener("click", () => {
+      randomQuote();
+    
+    });
+  </script>
+</body>
+</html>

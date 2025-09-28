@@ -1,0 +1,40 @@
+Project: Random Quote Generator
+
+Kaam: Har bar button click pe ek naya quote show ho.
+
+Learn: DOM manipulation, event listeners, arrays.
+
+Features add kar sakta hai:
+
+Auto-refresh after 5 sec
+
+Light/Dark mode button
+
+
+Level 2 – Modern Project (Thoda Advance JS)
+📌 Project: Weather App (Free API se)
+
+Kaam: User city ka naam dale → weather data dikhe.
+
+Learn: Fetch API, async/await, error handling.
+
+Features add kar sakta hai:
+
+Background image change based on weather (rainy → cloudy → sunny)
+
+Save last searched city in localStorage
+
+
+Project: Expense Tracker Dashboard
+
+Kaam: User income/expense add kare, balance auto update ho.
+
+Learn: CRUD operations (Create, Read, Update, Delete) using JS, localStorage for data save.
+
+Features add kar sakta hai:
+
+Monthly graph using Chart.js
+
+Filter by category (food, rent, travel)
+
+Responsive layout with sidebar
